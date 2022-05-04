@@ -54,3 +54,20 @@ else:
             print((A+(B+C)//60),(B+C)%60)
         else:
             print((A+(B+C)//60),B+C)
+
+# 다른 사람의 생각
+A,B = map(int,input().split())  #오븐에 들어갈 현재시간
+C = int(input())  #오븐이 돌아갈 시간(분)
+
+A_oven = C//60 #오븐에 넣는 시간(시)
+B_oven = C%60 #오븐에서 넣는 시간(분)
+
+A_new = A+A_oven #오븐에서 나오는 시간(시)
+B_new = B+B_oven #오븐에서 나오는 시간(분)
+
+if B_new >= 60:
+    B_new = B_new - 60
+    A_new = A_new +1
+if A_new >= 24:
+    A_new = A_new -24
+print(A_new,B_new)
